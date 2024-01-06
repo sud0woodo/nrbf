@@ -10,6 +10,14 @@ From the [Microsoft documentation](https://learn.microsoft.com/en-us/openspecs/w
 
 While working on a malware implant the `NRBF` format was encountered which was a little bit annoying to parse using some poor Python file parsing, and proved not giving back the data in the format that was easier to parse using existing `Python` implementations. This tool was thus created to have some reference code to parse the Microsoft `NRBF` format, while also allowing extendability and usability with the support for [flow.record](https://github.com/fox-it/flow.record).
 
+## Installation
+
+Installing can be done using `pip`:
+
+```sh
+python -m pip install .
+```
+
 ## CLI Usage
 
 The script can be used straight from the command line, or by using the API. Since the script supports the output in the form of `flow.record`, `rdump` can be used to format the output if necessary. For `rdump` usage examples you can check out the [rdump documentation](https://docs.dissect.tools/en/latest/tools/rdump.html).
