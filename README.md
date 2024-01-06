@@ -6,7 +6,7 @@ Python script to parse Microsoft NRBF serialized streams into records or stdout.
 
 From the [Microsoft documentation](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nrbf/75b9fe09-be15-475f-85b8-ae7b7558cfe5?redirectedfrom=MSDN):
 
-`The .NET Remoting: Binary Format Data Structure defines a set of structures that represent object graph or method invocation information as an octet stream.`
+> The .NET Remoting: Binary Format Data Structure defines a set of structures that represent object graph or method invocation information as an octet stream.
 
 While working on a malware implant the `NRBF` format was encountered which was a little bit annoying to parse using some poor Python file parsing, and proved not giving back the data in the format that was easier to parse using existing `Python` implementations. This tool was thus created to have some reference code to parse the Microsoft `NRBF` format, while also allowing extendability and usability with the support for [flow.record](https://github.com/fox-it/flow.record).
 
