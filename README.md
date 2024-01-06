@@ -56,3 +56,8 @@ nrbfrecords = NRBFRecords(nrbf=nrbf)
 for record in nrbfrecords.records():
     # Do something with the record
 ```
+
+## TODO
+
+- Some records may not be parsed entirely correctly yet, please open an issue if you encounter errors :)
+- Some record implementations need to be added to the `NRBFRecords` class to parse them correctly as some fields are added dynamically (e.g. `SystemClassWithMembersAndTypes` record type's `AddiotionalInfos` field)
