@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=65.5.0", "setuptools_scm[toml]>=6.4.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nrbf"
+description = "A small module implementing a parser for the Microsoft .NET Binary Format Data Structure."
+readme = "README.md"
+requires-python = "~=3.9"
+license.text = "Affero General Public License v3"
+authors = [
+  {name = "Axel Boesenach", email = "40278342+sud0woodo@users.noreply.github.com "}
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: Log Analysis",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Security",
+  "Topic :: Utilities",
+]
+dependencies = [
+    "dissect.cstruct",
+    "flow.record",
+]
+dynamic = ["version"]
+
+[project.urls]
+repository = "https://github.com/sud0woodo/nrbf"
+
+[project.scripts]
+nrbf-extract = "nrbf.utils.nrbf_extract:main"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+known_first_party = ["nrbf"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "COPYRIGHT"]
+
+[tool.setuptools.packages.find]
+include = ["nrbf"]
+
+[tool.setuptools_scm]
