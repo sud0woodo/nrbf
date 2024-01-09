@@ -49,6 +49,16 @@ class NRBF:
 
             yield header, record
 
+    def records(self) -> Generator[RecordDescriptor]:
+        """Parse the stream and yield records as RecordDescriptor objects.
+
+        Returns:
+            A generator that yields RecordDescriptor objects.
+        """
+
+        nrbfrecords = NRBFRecords(nrbf=self)
+        yield from nrbfrecords.records()
+
     def _header(self) -> cstruct:
         """Get the next record header from the stream."""
 

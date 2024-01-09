@@ -33,8 +33,7 @@ def parse_as_records(args: Namespace, nrbf: NRBF):
         path = f"{args.format}://{args.write}" if args.format in ["jsonfile", "csvfile", "xlsx"] else args.write
         writer = RecordWriter(path)
 
-    nrbfrecords = NRBFRecords(nrbf=nrbf)
-    for record in nrbfrecords.records():
+    for record in nrbf.records():
         writer.write(record)
 
     if writer:
@@ -53,8 +52,7 @@ def parse_as_plain(args: Namespace, nrbf: NRBF):
         nrbf: The NRBF object to parse the records from.
     """
 
-    nrbfrecords = NRBFRecords(nrbf=nrbf)
-    for record in nrbfrecords.records():
+    for record in nrbf.records():
         print(record)
 
 

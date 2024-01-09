@@ -51,18 +51,30 @@ $ nrbf-extract --hex 0001000000FFFFFFFF01000000000000001514000000120B53656E64416
 
 ## API Usage
 
-The script was made to be easy in use when parsing `NRBF` streams as well.
+The script was made to be easy in use when parsing `NRBF` streams as `flow.record` well.
 
 ```python
 from io import BytesIO
 
-from nrbf.nrbf import NRBF, NRBFRecords
+from nrbf.nrbf import NRBF
 
 stream = BytesIO(bytes.fromhex("000000000000000000010000000000000016110800001210416464726573732072656365697665640B"))
 nrbf = NRBF(stream=stream)
-nrbfrecords = NRBFRecords(nrbf=nrbf)
-for record in nrbfrecords.records():
+for record in nrbf.records():
     # Do something with the record
+```
+
+Or getting the raw `header` and `record` as `cstruct` objects for further parsing:
+
+```python
+from io import BytesIO
+
+from nrbf.nrbf import NRBF
+
+stream = BytesIO(bytes.fromhex("000000000000000000010000000000000016110800001210416464726573732072656365697665640B"))
+nrbf = NRBF(stream=stream)
+for header, record in nrbf.parse():
+    # Do something with the header and record
 ```
 
 ## TODO
