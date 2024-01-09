@@ -56,7 +56,7 @@ The script was made to be easy in use when parsing `NRBF` streams as well.
 ```python
 from io import BytesIO
 
-from nrbf.nrbf import NRBF
+from nrbf.nrbf import NRBF, NRBFRecords
 
 stream = BytesIO(bytes.fromhex("000000000000000000010000000000000016110800001210416464726573732072656365697665640B"))
 nrbf = NRBF(stream=stream)
